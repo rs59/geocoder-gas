@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>geocoder-gas - Simple Google Apps Script geocoding library</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4; /* Light gray background */
+      margin: 0;
+      padding: 20px;
+    }
+
+    #container {
+      max-width: 600px;
+      margin: auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    #version {
+      font-size: 14px;
+      font-weight: normal;
+      color: #888;
+    }
+
+    #description {
+      font-size: 16px;
+      margin-bottom: 20px;
+      color: #888;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      font-size: 15px;
+      margin-bottom: 15px; /* Increased space between buttons */
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    
+    #loading {
+      display: none;
+      margin-top: 15px;
+      font-size: 14px;
+      color: #888;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .button-label {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    #input-label, #output-label {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    #input, #output {
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      white-space: pre-wrap;
+      font-family: monospace;
+    }
+  </style>
+  <script>
+    function showLoading() {
+      document.getElementById('loading').style.display = 'block';
+    }
+
+    function hideLoading() {
+      document.getElementById('loading').style.display = 'none';
+    }
+
+    function demo1() {
+      showLoading();
+      google.script.run.withSuccessHandler(function(output) {
+        hideLoading();
+        updateOutput(output);
+      }).demo1();
+    }
+
+    function demo2() {
+      showLoading();
+      google.script.run.withSuccessHandler(function(output) {
+        hideLoading();
+        updateOutput(output);
+      }).demo2();
+    }
+
+    function demo3() {
+      showLoading();
+      google.script.run.withSuccessHandler(function(output) {
+        hideLoading();
+        updateOutput(output);
+      }).demo3();
+    }
+
+    function updateOutput(output) {
+      document.getElementById('input').innerText = output[0];
+      document.getElementById('output').innerText = output[1];
+    }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div id="title">geocoder-gas <span id="version">v1.1</span></div>
+    <div id="description">Simple Google Apps Script geocoding library</div>
+
+    <div class="button-label">gc.geocode(address);</div>
+    <button onclick="demo1()">Single geocoding</button>
+
+    <div class="button-label">gc.reverseGeocode(lat, lon);</div>
+    <button onclick="demo2()">Reverse geocoding</button>
+
+    <div class="button-label">gc.detailMultiple([address1, address2]);</div>
+    <button onclick="demo3()">Multiple/detailed geocoding</button>
+
+    <div id="loading">Loading...</div>
+
+    <div id="input-label">Input:</div>
+    <div id="input"></div>
+
+    <div id="output-label">Output:</div>
+    <div id="output"></div>
+  </div>
+</body>
+</html>
