@@ -493,7 +493,7 @@ function GeocoderPrivateMethodsTests() {
           fma: '1234 N St, Denver, CO 80230',
           rva: '9999 N St, Denver, CO 80230',
         })
-        concernOfInterest = 'INCORRECT CONCERN'
+        concernOfInterest = 'Zip and/or street numbers in input and reverse geocoded addresses do not match'
 
         if (concerns.includes(concernOfInterest)) {
           result = true
