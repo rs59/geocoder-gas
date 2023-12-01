@@ -15,7 +15,7 @@ Special note: This repository demonstrates a complete Google Apps Script deploym
 	<img width="668" alt="image" src="https://github.com/rs59/geocoder-gas/assets/97830491/2c513f6b-4b2c-4402-8a85-3ada6d246f75">
 
 - [Source code](./src/geocoder_library.ts) (can simply be copied to your GAS project)
-- [Documentation](./docs/index.html)
+- [Documentation](https://htmlpreview.github.io/?https://raw.githubusercontent.com/rs59/geocoder-gas/develop/docs/index.html)
 - [Unit tests](./src/geocoder_test.ts)
 - [Demo functions](./src/geocoder_demo.ts)
 
